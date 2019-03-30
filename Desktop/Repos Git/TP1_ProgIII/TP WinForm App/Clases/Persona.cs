@@ -12,12 +12,12 @@ namespace Clases
         public string Apellido { get; set; }
         public string fechaNacimiento { get; set; }
         public string Sexo { get; set; }
-        public List<string> estilosMusicales = new List<string>();
+        public string estilosMusicales { get; set; }
         public string colorFavorito { get; set; }
 
         public Persona() { }
 
-        public Persona(string nombre, string apellido, string fechNac, string sexo, List<string> estilos, string color)
+        public Persona(string nombre, string apellido, string fechNac, string sexo, string estilos, string color)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;

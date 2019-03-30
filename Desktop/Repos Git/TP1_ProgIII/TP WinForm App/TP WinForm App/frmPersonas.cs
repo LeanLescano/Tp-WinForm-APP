@@ -52,40 +52,84 @@ namespace TP_WinForm_App
             {
                 edad--;
             }
-
-            if(dtpFechaNacimiento.Value.Month == DateTime.Now.Month && dtpFechaNacimiento.Value.Day == DateTime.Now.Day)
-            {
-                lblEdadCalculada.Text = edad.ToString() + "  ¡Feliz cumpleaños!";
-            }
-            else
-            {
-                lblEdadCalculada.Text = edad.ToString();
-            }
-        
+            if (edad <= 0) return;
+            lblEdadCalculada.Text = edad.ToString();        
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             string fechnac = dtpFechaNacimiento.Text;
-            string selectedSexo = "No definido";
-            foreach (var Rboton in gpSexo.Controls)
+
+            //Busca cuál es el radioButton seleccionado y lo asigna a la variable.
+            string sexoSelected = "No definido";
+            foreach (RadioButton Rboton in gpSexo.Controls)
             {
-                RadioButton radiobtn = Rboton as RadioButton;
-                if(radiobtn.Checked)
+                if(Rboton.Checked)
                 {
-                    selectedSexo = radiobtn.Text;
+                    sexoSelected = Rboton.Text;
                 }
             }
-
-            Persona nueva = new Persona(txtNombre.Text.Trim(), txtApellido.Text.Trim(), fechnac, selectedSexo ,listadoEstilos, "amarillo");
+            //ESTILOS MUSICALES
+            string estilosMusicales = "";
+            int vuelta = 0;
+            foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
+            {
+                if (Cbox.Checked)
+                {
+                    estilosMusicales += Cbox.Text;
+                    if (vuelta == 8)
+                    {
+                        estilosMusicales += ".";
+                    }
+                    else
+                    {
+                        estilosMusicales += ", ";
+                    }
+                }
+                vuelta++;
+            }
+            //Asigna los datos cargados mediante un constructor y lo agrega a la lista.
+            Persona nueva = new Persona(txtNombre.Text.Trim(), txtApellido.Text.Trim(), fechnac, sexoSelected , estilosMusicales, cboColor.Text);
             listadoPersonas.Add(nueva);
             refrescarGrilla();
+            restablecerControles();
         }
 
         private void refrescarGrilla()
         {
             dgvPersonas.DataSource = new List<Persona>();
             dgvPersonas.DataSource = listadoPersonas;
+        }
+
+        private void restablecerControles()
+        {
+            foreach (RadioButton rb in gpSexo.Controls)
+            {
+                rb.Checked = false;
+            }
+
+            foreach (CheckBox cb in gpbEstilosMusicales.Controls)
+            {
+                cb.Checked = false;
+            }
+
+            txtNombre.ResetText();
+            txtApellido.ResetText();
+            dtpFechaNacimiento.ResetText();
+            cboColor.ResetText(); 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            restablecerControles();
+        }
+
+        private void dgvPersonas_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if(e.StateChanged == DataGridViewElementStates.Selected)
+            {
+
+            }
         }
     }
 }

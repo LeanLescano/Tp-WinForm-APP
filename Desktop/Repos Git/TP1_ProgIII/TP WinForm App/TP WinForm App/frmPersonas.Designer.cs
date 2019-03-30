@@ -63,7 +63,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(12, 12);
+            this.lblNombre.Location = new System.Drawing.Point(31, 12);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 0;
@@ -72,7 +72,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(12, 79);
+            this.lblApellido.Location = new System.Drawing.Point(31, 79);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(47, 13);
             this.lblApellido.TabIndex = 1;
@@ -81,7 +81,7 @@
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(236, 12);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(255, 12);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(109, 13);
             this.lblFechaNacimiento.TabIndex = 2;
@@ -90,7 +90,7 @@
             // lblEdad
             // 
             this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(436, 42);
+            this.lblEdad.Location = new System.Drawing.Point(309, 61);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(35, 13);
             this.lblEdad.TabIndex = 3;
@@ -99,7 +99,7 @@
             // lblColor
             // 
             this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(236, 108);
+            this.lblColor.Location = new System.Drawing.Point(255, 108);
             this.lblColor.Name = "lblColor";
             this.lblColor.Size = new System.Drawing.Size(72, 13);
             this.lblColor.TabIndex = 5;
@@ -108,21 +108,21 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(12, 38);
+            this.txtNombre.Location = new System.Drawing.Point(31, 38);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(176, 20);
             this.txtNombre.TabIndex = 6;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(12, 105);
+            this.txtApellido.Location = new System.Drawing.Point(31, 105);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(176, 20);
             this.txtApellido.TabIndex = 7;
             // 
             // dtpFechaNacimiento
             // 
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(236, 38);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(255, 38);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(199, 20);
             this.dtpFechaNacimiento.TabIndex = 8;
@@ -176,7 +176,7 @@
             // cboColor
             // 
             this.cboColor.FormattingEnabled = true;
-            this.cboColor.Location = new System.Drawing.Point(314, 105);
+            this.cboColor.Location = new System.Drawing.Point(333, 105);
             this.cboColor.Name = "cboColor";
             this.cboColor.Size = new System.Drawing.Size(121, 21);
             this.cboColor.Sorted = true;
@@ -293,7 +293,7 @@
             // lblEdadCalculada
             // 
             this.lblEdadCalculada.AutoSize = true;
-            this.lblEdadCalculada.Location = new System.Drawing.Point(448, 201);
+            this.lblEdadCalculada.Location = new System.Drawing.Point(347, 61);
             this.lblEdadCalculada.Name = "lblEdadCalculada";
             this.lblEdadCalculada.Size = new System.Drawing.Size(0, 13);
             this.lblEdadCalculada.TabIndex = 17;
@@ -305,10 +305,11 @@
             this.dgvPersonas.Name = "dgvPersonas";
             this.dgvPersonas.Size = new System.Drawing.Size(773, 221);
             this.dgvPersonas.TabIndex = 18;
+            this.dgvPersonas.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvPersonas_RowStateChanged);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(104, 175);
+            this.btnAceptar.Location = new System.Drawing.Point(123, 175);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 19;
@@ -318,12 +319,13 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(239, 175);
+            this.btnCancelar.Location = new System.Drawing.Point(258, 175);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmPersonas
             // 
