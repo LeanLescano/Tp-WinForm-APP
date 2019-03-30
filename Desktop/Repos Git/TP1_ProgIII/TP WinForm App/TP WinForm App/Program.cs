@@ -16,7 +16,7 @@ namespace TP_WinForm_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VentanaPrincipal());
+            Application.Run(new frmPrincipal());
         }
     }
 }

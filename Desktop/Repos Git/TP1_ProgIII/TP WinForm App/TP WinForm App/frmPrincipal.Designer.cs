@@ -1,6 +1,6 @@
 ﻿namespace TP_WinForm_App
 {
-    partial class VentanaPrincipal
+    partial class frmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.ssInfo = new System.Windows.Forms.StatusStrip();
             this.tssStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -45,17 +45,17 @@
             // 
             this.ssInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssStatus});
-            this.ssInfo.Location = new System.Drawing.Point(0, 428);
+            this.ssInfo.Location = new System.Drawing.Point(0, 486);
             this.ssInfo.Name = "ssInfo";
-            this.ssInfo.Size = new System.Drawing.Size(800, 22);
+            this.ssInfo.Size = new System.Drawing.Size(906, 22);
             this.ssInfo.TabIndex = 0;
             this.ssInfo.Text = "Bienvenido!";
             // 
             // tssStatus
             // 
             this.tssStatus.Name = "tssStatus";
-            this.tssStatus.Size = new System.Drawing.Size(69, 17);
-            this.tssStatus.Text = "Bienvenido!";
+            this.tssStatus.Size = new System.Drawing.Size(378, 17);
+            this.tssStatus.Text = "Desde esta ventana podrás acceder a los listados de personas y objetos";
             // 
             // msListados
             // 
@@ -64,7 +64,7 @@
             this.listadosToolStripMenuItem});
             this.msListados.Location = new System.Drawing.Point(0, 0);
             this.msListados.Name = "msListados";
-            this.msListados.Size = new System.Drawing.Size(800, 24);
+            this.msListados.Size = new System.Drawing.Size(906, 24);
             this.msListados.TabIndex = 1;
             this.msListados.Text = "menuStrip1";
             // 
@@ -76,6 +76,8 @@
             this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
             this.listadosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.listadosToolStripMenuItem.Text = "Listados";
+            this.listadosToolStripMenuItem.MouseLeave += new System.EventHandler(this.listadosToolStripMenuItem_MouseLeave);
+            this.listadosToolStripMenuItem.MouseHover += new System.EventHandler(this.listadosToolStripMenuItem_MouseHover);
             // 
             // personasToolStripMenuItem
             // 
@@ -93,16 +95,18 @@
             this.objetosToolStripMenuItem.Name = "objetosToolStripMenuItem";
             this.objetosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.objetosToolStripMenuItem.Text = "Objetos";
+            this.objetosToolStripMenuItem.Click += new System.EventHandler(this.objetosToolStripMenuItem_Click);
             // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(906, 508);
             this.Controls.Add(this.ssInfo);
             this.Controls.Add(this.msListados);
             this.MainMenuStrip = this.msListados;
             this.Name = "VentanaPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario de Listados";
             this.ssInfo.ResumeLayout(false);
             this.ssInfo.PerformLayout();

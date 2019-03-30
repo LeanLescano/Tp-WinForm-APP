@@ -1,6 +1,6 @@
 ﻿namespace TP_WinForm_App
 {
-    partial class VentanaObjetos
+    partial class frmObjetos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmObjetos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "VentanaObjetos";
+            this.Name = "frmObjetos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Listado de objetos";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
