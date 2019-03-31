@@ -51,10 +51,10 @@
             this.cboClasica = new System.Windows.Forms.CheckBox();
             this.cboRock = new System.Windows.Forms.CheckBox();
             this.cboPop = new System.Windows.Forms.CheckBox();
-            this.lblEdadCalculada = new System.Windows.Forms.Label();
             this.dgvPersonas = new System.Windows.Forms.DataGridView();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.gpSexo.SuspendLayout();
             this.gpbEstilosMusicales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
@@ -92,9 +92,9 @@
             this.lblEdad.AutoSize = true;
             this.lblEdad.Location = new System.Drawing.Point(309, 61);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(35, 13);
+            this.lblEdad.Size = new System.Drawing.Size(38, 13);
             this.lblEdad.TabIndex = 3;
-            this.lblEdad.Text = "Edad:";
+            this.lblEdad.Text = "Edad: ";
             // 
             // lblColor
             // 
@@ -104,7 +104,6 @@
             this.lblColor.Size = new System.Drawing.Size(72, 13);
             this.lblColor.TabIndex = 5;
             this.lblColor.Text = "Color favorito:";
-            this.lblColor.Click += new System.EventHandler(this.lblColor_Click);
             // 
             // txtNombre
             // 
@@ -290,36 +289,29 @@
             this.cboPop.Text = "Pop";
             this.cboPop.UseVisualStyleBackColor = true;
             // 
-            // lblEdadCalculada
-            // 
-            this.lblEdadCalculada.AutoSize = true;
-            this.lblEdadCalculada.Location = new System.Drawing.Point(347, 61);
-            this.lblEdadCalculada.Name = "lblEdadCalculada";
-            this.lblEdadCalculada.Size = new System.Drawing.Size(0, 13);
-            this.lblEdadCalculada.TabIndex = 17;
-            // 
             // dgvPersonas
             // 
+            this.dgvPersonas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonas.Location = new System.Drawing.Point(15, 217);
             this.dgvPersonas.Name = "dgvPersonas";
             this.dgvPersonas.Size = new System.Drawing.Size(773, 221);
             this.dgvPersonas.TabIndex = 18;
-            this.dgvPersonas.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvPersonas_RowStateChanged);
+            this.dgvPersonas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersonas_CellClick);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(123, 175);
+            this.btnAceptar.Location = new System.Drawing.Point(93, 175);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 19;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "Agregar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(258, 175);
+            this.btnCancelar.Location = new System.Drawing.Point(216, 175);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 20;
@@ -327,15 +319,26 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(339, 174);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 21;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvPersonas);
-            this.Controls.Add(this.lblEdadCalculada);
             this.Controls.Add(this.gpbEstilosMusicales);
             this.Controls.Add(this.cboColor);
             this.Controls.Add(this.gpSexo);
@@ -384,12 +387,12 @@
         private System.Windows.Forms.CheckBox cboClasica;
         private System.Windows.Forms.CheckBox cboRock;
         private System.Windows.Forms.CheckBox cboPop;
-        private System.Windows.Forms.Label lblEdadCalculada;
         private System.Windows.Forms.CheckBox cboTrap;
         private System.Windows.Forms.CheckBox cboReggaeton;
         private System.Windows.Forms.CheckBox cboJazz;
         private System.Windows.Forms.DataGridView dgvPersonas;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
