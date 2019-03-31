@@ -25,6 +25,7 @@ namespace TP_WinForm_App
         private void frmPersonas_Load(object sender, EventArgs e)
         {
             cboColor.Items.Add("Rojo");
+            cboColor.Items.Add("Rosa");
             cboColor.Items.Add("Verde");
             cboColor.Items.Add("Azul");
             cboColor.Items.Add("Amarillo");
@@ -56,9 +57,14 @@ namespace TP_WinForm_App
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (faltanDatos())
+            {
+                MessageBox.Show("Faltan cargar datos", "¡Atención!");
+                return;
+            }
             string fechnac = dtpFechaNacimiento.Text;
             //Busca cuál es el radioButton seleccionado y lo asigna a la variable.
-            string sexoSelected = "No definido";
+            string sexoSelected = "";
             foreach (RadioButton Rboton in gpSexo.Controls)
             {
                 if(Rboton.Checked)
@@ -69,25 +75,7 @@ namespace TP_WinForm_App
             //Guarda los estilos musicales en un array de strings y en forma de texto para mostrar en la grilla.
             string estilosMusicales = "";
             string[] listadoEstilos = new string[8];
-            int vuelta = 0, indice = 0;
-            foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
-            {
-                if (Cbox.Checked)
-                {
-                    listadoEstilos[indice] = Cbox.Text;
-                    estilosMusicales += Cbox.Text;
-                    if (vuelta == 8)
-                    {
-                        estilosMusicales += ".";
-                    }
-                    else
-                    {
-                        estilosMusicales += ", ";
-                    }
-                    indice++;
-                }
-                vuelta++;
-            }
+            estilosToString(estilosMusicales, listadoEstilos);
             //Asigna los datos cargados mediante un constructor y lo agrega a la lista.
             Persona nueva = new Persona(txtNombre.Text.Trim(), txtApellido.Text.Trim(), fechnac, sexoSelected, estilosMusicales, listadoEstilos, cboColor.Text);
             if (btnAceptar.Text == "Agregar")
@@ -155,6 +143,42 @@ namespace TP_WinForm_App
                     }
                 }
 
+            }
+        }
+
+        private bool faltanDatos()
+        {
+            if (txtApellido.Text.Trim() == "" || txtNombre.Text.Trim() == "") return true;
+            bool Vacio = true;
+            foreach (RadioButton Rboton in gpSexo.Controls)
+            {
+                if (Rboton.Checked == true) Vacio = false;
+            }
+            if (Vacio) return true;
+
+            return false;
+        }
+
+        private void estilosToString(string estilosM, string[] listadoE)
+        {
+            int vuelta = 0, indice = 0;
+            foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
+            {
+                if (Cbox.Checked)
+                {
+                    listadoE[indice] = Cbox.Text;
+                    estilosM += Cbox.Text;
+                    if (vuelta == 8)
+                    {
+                        estilosM += ".";
+                    }
+                    else
+                    {
+                        estilosM += ", ";
+                    }
+                    indice++;
+                }
+                vuelta++;
             }
         }
 

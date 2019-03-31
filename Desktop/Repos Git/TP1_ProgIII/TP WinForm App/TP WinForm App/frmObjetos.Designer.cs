@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObjetos));
             this.ltbUno = new System.Windows.Forms.ListBox();
             this.ltbDos = new System.Windows.Forms.ListBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -39,6 +41,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblCantidadUno = new System.Windows.Forms.Label();
             this.lblCantidadDos = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // ltbUno
@@ -92,6 +95,7 @@
             this.btnAllRight.Size = new System.Drawing.Size(75, 23);
             this.btnAllRight.TabIndex = 5;
             this.btnAllRight.Text = ">>";
+            this.toolTip1.SetToolTip(this.btnAllRight, "Mover todos los objetos hacia la derecha");
             this.btnAllRight.UseVisualStyleBackColor = true;
             this.btnAllRight.Click += new System.EventHandler(this.btnAllRight_Click);
             // 
@@ -103,6 +107,7 @@
             this.btnOneRight.Size = new System.Drawing.Size(75, 23);
             this.btnOneRight.TabIndex = 6;
             this.btnOneRight.Text = ">";
+            this.toolTip1.SetToolTip(this.btnOneRight, "Mover objeto seleccionado hacia la derecha");
             this.btnOneRight.UseVisualStyleBackColor = true;
             this.btnOneRight.Click += new System.EventHandler(this.btnOneRight_Click);
             // 
@@ -114,6 +119,7 @@
             this.btnOneLeft.Size = new System.Drawing.Size(75, 23);
             this.btnOneLeft.TabIndex = 7;
             this.btnOneLeft.Text = "<";
+            this.toolTip1.SetToolTip(this.btnOneLeft, "Mover objeto seleccionado hacia la izquierda");
             this.btnOneLeft.UseVisualStyleBackColor = true;
             this.btnOneLeft.Click += new System.EventHandler(this.btnOneLeft_Click);
             // 
@@ -125,6 +131,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "...";
+            this.toolTip1.SetToolTip(this.btnEliminar, "Eliminar objeto");
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -162,6 +169,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.ltbDos);
             this.Controls.Add(this.ltbUno);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmObjetos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de objetos";
@@ -183,5 +191,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblCantidadUno;
         private System.Windows.Forms.Label lblCantidadDos;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPersonas));
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
@@ -43,14 +44,14 @@
             this.cboColor = new System.Windows.Forms.ComboBox();
             this.chbElectronica = new System.Windows.Forms.CheckBox();
             this.gpbEstilosMusicales = new System.Windows.Forms.GroupBox();
-            this.cboTrap = new System.Windows.Forms.CheckBox();
-            this.cboReggaeton = new System.Windows.Forms.CheckBox();
-            this.cboJazz = new System.Windows.Forms.CheckBox();
-            this.cboReggae = new System.Windows.Forms.CheckBox();
-            this.cboMetal = new System.Windows.Forms.CheckBox();
-            this.cboClasica = new System.Windows.Forms.CheckBox();
-            this.cboRock = new System.Windows.Forms.CheckBox();
-            this.cboPop = new System.Windows.Forms.CheckBox();
+            this.chbTrap = new System.Windows.Forms.CheckBox();
+            this.chbReggaeton = new System.Windows.Forms.CheckBox();
+            this.chbJazz = new System.Windows.Forms.CheckBox();
+            this.chbReggae = new System.Windows.Forms.CheckBox();
+            this.chbMetal = new System.Windows.Forms.CheckBox();
+            this.chbClasica = new System.Windows.Forms.CheckBox();
+            this.chbRock = new System.Windows.Forms.CheckBox();
+            this.chbPop = new System.Windows.Forms.CheckBox();
             this.dgvPersonas = new System.Windows.Forms.DataGridView();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -90,7 +91,7 @@
             // lblEdad
             // 
             this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(309, 61);
+            this.lblEdad.Location = new System.Drawing.Point(320, 61);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(38, 13);
             this.lblEdad.TabIndex = 3;
@@ -193,101 +194,101 @@
             // 
             // gpbEstilosMusicales
             // 
-            this.gpbEstilosMusicales.Controls.Add(this.cboTrap);
-            this.gpbEstilosMusicales.Controls.Add(this.cboReggaeton);
-            this.gpbEstilosMusicales.Controls.Add(this.cboJazz);
-            this.gpbEstilosMusicales.Controls.Add(this.cboReggae);
-            this.gpbEstilosMusicales.Controls.Add(this.cboMetal);
-            this.gpbEstilosMusicales.Controls.Add(this.cboClasica);
-            this.gpbEstilosMusicales.Controls.Add(this.cboRock);
-            this.gpbEstilosMusicales.Controls.Add(this.cboPop);
+            this.gpbEstilosMusicales.Controls.Add(this.chbTrap);
+            this.gpbEstilosMusicales.Controls.Add(this.chbReggaeton);
+            this.gpbEstilosMusicales.Controls.Add(this.chbJazz);
+            this.gpbEstilosMusicales.Controls.Add(this.chbReggae);
+            this.gpbEstilosMusicales.Controls.Add(this.chbMetal);
+            this.gpbEstilosMusicales.Controls.Add(this.chbClasica);
+            this.gpbEstilosMusicales.Controls.Add(this.chbRock);
+            this.gpbEstilosMusicales.Controls.Add(this.chbPop);
             this.gpbEstilosMusicales.Controls.Add(this.chbElectronica);
             this.gpbEstilosMusicales.Location = new System.Drawing.Point(504, 74);
             this.gpbEstilosMusicales.Name = "gpbEstilosMusicales";
             this.gpbEstilosMusicales.Size = new System.Drawing.Size(284, 124);
             this.gpbEstilosMusicales.TabIndex = 16;
             this.gpbEstilosMusicales.TabStop = false;
-            this.gpbEstilosMusicales.Text = "Estilos Musicales";
+            this.gpbEstilosMusicales.Text = "Estilos musicales preferidos";
             // 
-            // cboTrap
+            // chbTrap
             // 
-            this.cboTrap.AutoSize = true;
-            this.cboTrap.Location = new System.Drawing.Point(209, 96);
-            this.cboTrap.Name = "cboTrap";
-            this.cboTrap.Size = new System.Drawing.Size(48, 17);
-            this.cboTrap.TabIndex = 23;
-            this.cboTrap.Text = "Trap";
-            this.cboTrap.UseVisualStyleBackColor = true;
+            this.chbTrap.AutoSize = true;
+            this.chbTrap.Location = new System.Drawing.Point(209, 96);
+            this.chbTrap.Name = "chbTrap";
+            this.chbTrap.Size = new System.Drawing.Size(48, 17);
+            this.chbTrap.TabIndex = 23;
+            this.chbTrap.Text = "Trap";
+            this.chbTrap.UseVisualStyleBackColor = true;
             // 
-            // cboReggaeton
+            // chbReggaeton
             // 
-            this.cboReggaeton.AutoSize = true;
-            this.cboReggaeton.Location = new System.Drawing.Point(14, 96);
-            this.cboReggaeton.Name = "cboReggaeton";
-            this.cboReggaeton.Size = new System.Drawing.Size(79, 17);
-            this.cboReggaeton.TabIndex = 22;
-            this.cboReggaeton.Text = "Reggaeton";
-            this.cboReggaeton.UseVisualStyleBackColor = true;
+            this.chbReggaeton.AutoSize = true;
+            this.chbReggaeton.Location = new System.Drawing.Point(14, 96);
+            this.chbReggaeton.Name = "chbReggaeton";
+            this.chbReggaeton.Size = new System.Drawing.Size(79, 17);
+            this.chbReggaeton.TabIndex = 22;
+            this.chbReggaeton.Text = "Reggaeton";
+            this.chbReggaeton.UseVisualStyleBackColor = true;
             // 
-            // cboJazz
+            // chbJazz
             // 
-            this.cboJazz.AutoSize = true;
-            this.cboJazz.Location = new System.Drawing.Point(124, 96);
-            this.cboJazz.Name = "cboJazz";
-            this.cboJazz.Size = new System.Drawing.Size(47, 17);
-            this.cboJazz.TabIndex = 21;
-            this.cboJazz.Text = "Jazz";
-            this.cboJazz.UseVisualStyleBackColor = true;
+            this.chbJazz.AutoSize = true;
+            this.chbJazz.Location = new System.Drawing.Point(124, 96);
+            this.chbJazz.Name = "chbJazz";
+            this.chbJazz.Size = new System.Drawing.Size(47, 17);
+            this.chbJazz.TabIndex = 21;
+            this.chbJazz.Text = "Jazz";
+            this.chbJazz.UseVisualStyleBackColor = true;
             // 
-            // cboReggae
+            // chbReggae
             // 
-            this.cboReggae.AutoSize = true;
-            this.cboReggae.Location = new System.Drawing.Point(209, 63);
-            this.cboReggae.Name = "cboReggae";
-            this.cboReggae.Size = new System.Drawing.Size(64, 17);
-            this.cboReggae.TabIndex = 20;
-            this.cboReggae.Text = "Reggae";
-            this.cboReggae.UseVisualStyleBackColor = true;
+            this.chbReggae.AutoSize = true;
+            this.chbReggae.Location = new System.Drawing.Point(209, 63);
+            this.chbReggae.Name = "chbReggae";
+            this.chbReggae.Size = new System.Drawing.Size(64, 17);
+            this.chbReggae.TabIndex = 20;
+            this.chbReggae.Text = "Reggae";
+            this.chbReggae.UseVisualStyleBackColor = true;
             // 
-            // cboMetal
+            // chbMetal
             // 
-            this.cboMetal.AutoSize = true;
-            this.cboMetal.Location = new System.Drawing.Point(124, 63);
-            this.cboMetal.Name = "cboMetal";
-            this.cboMetal.Size = new System.Drawing.Size(52, 17);
-            this.cboMetal.TabIndex = 19;
-            this.cboMetal.Text = "Metal";
-            this.cboMetal.UseVisualStyleBackColor = true;
+            this.chbMetal.AutoSize = true;
+            this.chbMetal.Location = new System.Drawing.Point(124, 63);
+            this.chbMetal.Name = "chbMetal";
+            this.chbMetal.Size = new System.Drawing.Size(52, 17);
+            this.chbMetal.TabIndex = 19;
+            this.chbMetal.Text = "Metal";
+            this.chbMetal.UseVisualStyleBackColor = true;
             // 
-            // cboClasica
+            // chbClasica
             // 
-            this.cboClasica.AutoSize = true;
-            this.cboClasica.Location = new System.Drawing.Point(14, 63);
-            this.cboClasica.Name = "cboClasica";
-            this.cboClasica.Size = new System.Drawing.Size(60, 17);
-            this.cboClasica.TabIndex = 18;
-            this.cboClasica.Text = "Clásica";
-            this.cboClasica.UseVisualStyleBackColor = true;
+            this.chbClasica.AutoSize = true;
+            this.chbClasica.Location = new System.Drawing.Point(14, 63);
+            this.chbClasica.Name = "chbClasica";
+            this.chbClasica.Size = new System.Drawing.Size(60, 17);
+            this.chbClasica.TabIndex = 18;
+            this.chbClasica.Text = "Clásica";
+            this.chbClasica.UseVisualStyleBackColor = true;
             // 
-            // cboRock
+            // chbRock
             // 
-            this.cboRock.AutoSize = true;
-            this.cboRock.Location = new System.Drawing.Point(209, 26);
-            this.cboRock.Name = "cboRock";
-            this.cboRock.Size = new System.Drawing.Size(52, 17);
-            this.cboRock.TabIndex = 17;
-            this.cboRock.Text = "Rock";
-            this.cboRock.UseVisualStyleBackColor = true;
+            this.chbRock.AutoSize = true;
+            this.chbRock.Location = new System.Drawing.Point(209, 26);
+            this.chbRock.Name = "chbRock";
+            this.chbRock.Size = new System.Drawing.Size(52, 17);
+            this.chbRock.TabIndex = 17;
+            this.chbRock.Text = "Rock";
+            this.chbRock.UseVisualStyleBackColor = true;
             // 
-            // cboPop
+            // chbPop
             // 
-            this.cboPop.AutoSize = true;
-            this.cboPop.Location = new System.Drawing.Point(124, 28);
-            this.cboPop.Name = "cboPop";
-            this.cboPop.Size = new System.Drawing.Size(45, 17);
-            this.cboPop.TabIndex = 16;
-            this.cboPop.Text = "Pop";
-            this.cboPop.UseVisualStyleBackColor = true;
+            this.chbPop.AutoSize = true;
+            this.chbPop.Location = new System.Drawing.Point(124, 28);
+            this.chbPop.Name = "chbPop";
+            this.chbPop.Size = new System.Drawing.Size(45, 17);
+            this.chbPop.TabIndex = 16;
+            this.chbPop.Text = "Pop";
+            this.chbPop.UseVisualStyleBackColor = true;
             // 
             // dgvPersonas
             // 
@@ -350,6 +351,7 @@
             this.Controls.Add(this.lblFechaNacimiento);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de personas";
@@ -382,14 +384,14 @@
         private System.Windows.Forms.ComboBox cboColor;
         private System.Windows.Forms.CheckBox chbElectronica;
         private System.Windows.Forms.GroupBox gpbEstilosMusicales;
-        private System.Windows.Forms.CheckBox cboReggae;
-        private System.Windows.Forms.CheckBox cboMetal;
-        private System.Windows.Forms.CheckBox cboClasica;
-        private System.Windows.Forms.CheckBox cboRock;
-        private System.Windows.Forms.CheckBox cboPop;
-        private System.Windows.Forms.CheckBox cboTrap;
-        private System.Windows.Forms.CheckBox cboReggaeton;
-        private System.Windows.Forms.CheckBox cboJazz;
+        private System.Windows.Forms.CheckBox chbReggae;
+        private System.Windows.Forms.CheckBox chbMetal;
+        private System.Windows.Forms.CheckBox chbClasica;
+        private System.Windows.Forms.CheckBox chbRock;
+        private System.Windows.Forms.CheckBox chbPop;
+        private System.Windows.Forms.CheckBox chbTrap;
+        private System.Windows.Forms.CheckBox chbReggaeton;
+        private System.Windows.Forms.CheckBox chbJazz;
         private System.Windows.Forms.DataGridView dgvPersonas;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
