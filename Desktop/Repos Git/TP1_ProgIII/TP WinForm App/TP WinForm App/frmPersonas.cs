@@ -73,9 +73,8 @@ namespace TP_WinForm_App
                 }
             }
             //Guarda los estilos musicales en un array de strings y en forma de texto para mostrar en la grilla.
-            string estilosMusicales = "";
             string[] listadoEstilos = new string[8];
-            estilosToString(estilosMusicales, listadoEstilos);
+            string estilosMusicales = estilosToString(listadoEstilos);
             //Asigna los datos cargados mediante un constructor y lo agrega a la lista.
             Persona nueva = new Persona(txtNombre.Text.Trim(), txtApellido.Text.Trim(), fechnac, sexoSelected, estilosMusicales, listadoEstilos, cboColor.Text);
             if (btnAceptar.Text == "Agregar")
@@ -159,8 +158,9 @@ namespace TP_WinForm_App
             return false;
         }
 
-        private void estilosToString(string estilosM, string[] listadoE)
+        private string estilosToString(string[] listadoE)
         {
+            string estilosM = "";
             int vuelta = 0, indice = 0;
             foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
             {
@@ -180,6 +180,7 @@ namespace TP_WinForm_App
                 }
                 vuelta++;
             }
+            return estilosM;
         }
 
         private void refrescarGrilla()
@@ -205,6 +206,18 @@ namespace TP_WinForm_App
             txtApellido.ResetText();
             dtpFechaNacimiento.ResetText();
             cboColor.ResetText();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && !(char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && !(char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
         }
     }
 }
