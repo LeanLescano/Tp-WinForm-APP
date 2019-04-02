@@ -120,5 +120,13 @@ namespace TP_WinForm_App
             }
             actualizarRegistros();
         }
+
+        private void frmObjetos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Desea salir del formulario?", "¡Atención!", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

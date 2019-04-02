@@ -15,18 +15,18 @@ namespace Clases
         public string estilosMusicales { get; set; }
         public string[] estilosList { get; set; }
         public string colorFavorito { get; set; }
-
+        
         public Persona() { }
 
-        public Persona(string nombre, string apellido, string fechNac, string sexo, string estilos, string[] lista, string color)
+        public Persona(string nom, string ape, string fechNac, string sexo, string estilos, string[] lista, string color)
         {
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.fechaNacimiento = fechNac;
-            this.Sexo = sexo;
-            this.estilosList = lista;
-            this.estilosMusicales = estilos;
-            this.colorFavorito = color;
+            Nombre = nom;
+            Apellido = ape;
+            fechaNacimiento = fechNac;
+            Sexo = sexo;
+            estilosList = lista;
+            estilosMusicales = estilos;
+            colorFavorito = color;
         }
     }
 }

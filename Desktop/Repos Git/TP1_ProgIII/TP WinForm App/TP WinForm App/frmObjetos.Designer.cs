@@ -173,6 +173,7 @@
             this.Name = "frmObjetos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de objetos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmObjetos_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

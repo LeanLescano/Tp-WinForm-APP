@@ -37,9 +37,9 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.rdMasculino = new System.Windows.Forms.RadioButton();
-            this.rdFemenino = new System.Windows.Forms.RadioButton();
-            this.rdOtro = new System.Windows.Forms.RadioButton();
+            this.rdbMasculino = new System.Windows.Forms.RadioButton();
+            this.rdbFemenino = new System.Windows.Forms.RadioButton();
+            this.rdbOtro = new System.Windows.Forms.RadioButton();
             this.gpSexo = new System.Windows.Forms.GroupBox();
             this.cboColor = new System.Windows.Forms.ComboBox();
             this.chbElectronica = new System.Windows.Forms.CheckBox();
@@ -124,50 +124,54 @@
             // 
             // dtpFechaNacimiento
             // 
+            this.dtpFechaNacimiento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(255, 38);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(199, 20);
             this.dtpFechaNacimiento.TabIndex = 8;
             this.dtpFechaNacimiento.ValueChanged += new System.EventHandler(this.dtpFechaNacimiento_ValueChanged);
             // 
-            // rdMasculino
+            // rdbMasculino
             // 
-            this.rdMasculino.AutoSize = true;
-            this.rdMasculino.Location = new System.Drawing.Point(14, 19);
-            this.rdMasculino.Name = "rdMasculino";
-            this.rdMasculino.Size = new System.Drawing.Size(73, 17);
-            this.rdMasculino.TabIndex = 9;
-            this.rdMasculino.TabStop = true;
-            this.rdMasculino.Text = "Masculino";
-            this.rdMasculino.UseVisualStyleBackColor = true;
+            this.rdbMasculino.AutoSize = true;
+            this.rdbMasculino.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbMasculino.Location = new System.Drawing.Point(14, 19);
+            this.rdbMasculino.Name = "rdbMasculino";
+            this.rdbMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rdbMasculino.TabIndex = 9;
+            this.rdbMasculino.TabStop = true;
+            this.rdbMasculino.Text = "Masculino";
+            this.rdbMasculino.UseVisualStyleBackColor = true;
             // 
-            // rdFemenino
+            // rdbFemenino
             // 
-            this.rdFemenino.AutoSize = true;
-            this.rdFemenino.Location = new System.Drawing.Point(124, 19);
-            this.rdFemenino.Name = "rdFemenino";
-            this.rdFemenino.Size = new System.Drawing.Size(71, 17);
-            this.rdFemenino.TabIndex = 10;
-            this.rdFemenino.TabStop = true;
-            this.rdFemenino.Text = "Femenino";
-            this.rdFemenino.UseVisualStyleBackColor = true;
+            this.rdbFemenino.AutoSize = true;
+            this.rdbFemenino.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbFemenino.Location = new System.Drawing.Point(124, 19);
+            this.rdbFemenino.Name = "rdbFemenino";
+            this.rdbFemenino.Size = new System.Drawing.Size(71, 17);
+            this.rdbFemenino.TabIndex = 10;
+            this.rdbFemenino.TabStop = true;
+            this.rdbFemenino.Text = "Femenino";
+            this.rdbFemenino.UseVisualStyleBackColor = true;
             // 
-            // rdOtro
+            // rdbOtro
             // 
-            this.rdOtro.AutoSize = true;
-            this.rdOtro.Location = new System.Drawing.Point(232, 19);
-            this.rdOtro.Name = "rdOtro";
-            this.rdOtro.Size = new System.Drawing.Size(45, 17);
-            this.rdOtro.TabIndex = 11;
-            this.rdOtro.TabStop = true;
-            this.rdOtro.Text = "Otro";
-            this.rdOtro.UseVisualStyleBackColor = true;
+            this.rdbOtro.AutoSize = true;
+            this.rdbOtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbOtro.Location = new System.Drawing.Point(232, 19);
+            this.rdbOtro.Name = "rdbOtro";
+            this.rdbOtro.Size = new System.Drawing.Size(45, 17);
+            this.rdbOtro.TabIndex = 11;
+            this.rdbOtro.TabStop = true;
+            this.rdbOtro.Text = "Otro";
+            this.rdbOtro.UseVisualStyleBackColor = true;
             // 
             // gpSexo
             // 
-            this.gpSexo.Controls.Add(this.rdMasculino);
-            this.gpSexo.Controls.Add(this.rdOtro);
-            this.gpSexo.Controls.Add(this.rdFemenino);
+            this.gpSexo.Controls.Add(this.rdbMasculino);
+            this.gpSexo.Controls.Add(this.rdbOtro);
+            this.gpSexo.Controls.Add(this.rdbFemenino);
             this.gpSexo.Location = new System.Drawing.Point(504, 12);
             this.gpSexo.Name = "gpSexo";
             this.gpSexo.Size = new System.Drawing.Size(284, 46);
@@ -177,6 +181,7 @@
             // 
             // cboColor
             // 
+            this.cboColor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboColor.FormattingEnabled = true;
             this.cboColor.Location = new System.Drawing.Point(333, 105);
             this.cboColor.Name = "cboColor";
@@ -187,6 +192,7 @@
             // chbElectronica
             // 
             this.chbElectronica.AutoSize = true;
+            this.chbElectronica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbElectronica.Location = new System.Drawing.Point(14, 28);
             this.chbElectronica.Name = "chbElectronica";
             this.chbElectronica.Size = new System.Drawing.Size(79, 17);
@@ -215,6 +221,7 @@
             // chbTrap
             // 
             this.chbTrap.AutoSize = true;
+            this.chbTrap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbTrap.Location = new System.Drawing.Point(209, 96);
             this.chbTrap.Name = "chbTrap";
             this.chbTrap.Size = new System.Drawing.Size(48, 17);
@@ -225,6 +232,7 @@
             // chbReggaeton
             // 
             this.chbReggaeton.AutoSize = true;
+            this.chbReggaeton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbReggaeton.Location = new System.Drawing.Point(14, 96);
             this.chbReggaeton.Name = "chbReggaeton";
             this.chbReggaeton.Size = new System.Drawing.Size(79, 17);
@@ -235,6 +243,7 @@
             // chbJazz
             // 
             this.chbJazz.AutoSize = true;
+            this.chbJazz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbJazz.Location = new System.Drawing.Point(124, 96);
             this.chbJazz.Name = "chbJazz";
             this.chbJazz.Size = new System.Drawing.Size(47, 17);
@@ -245,6 +254,7 @@
             // chbReggae
             // 
             this.chbReggae.AutoSize = true;
+            this.chbReggae.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbReggae.Location = new System.Drawing.Point(209, 63);
             this.chbReggae.Name = "chbReggae";
             this.chbReggae.Size = new System.Drawing.Size(64, 17);
@@ -255,6 +265,7 @@
             // chbMetal
             // 
             this.chbMetal.AutoSize = true;
+            this.chbMetal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbMetal.Location = new System.Drawing.Point(124, 63);
             this.chbMetal.Name = "chbMetal";
             this.chbMetal.Size = new System.Drawing.Size(52, 17);
@@ -265,6 +276,7 @@
             // chbClasica
             // 
             this.chbClasica.AutoSize = true;
+            this.chbClasica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbClasica.Location = new System.Drawing.Point(14, 63);
             this.chbClasica.Name = "chbClasica";
             this.chbClasica.Size = new System.Drawing.Size(60, 17);
@@ -275,6 +287,7 @@
             // chbRock
             // 
             this.chbRock.AutoSize = true;
+            this.chbRock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbRock.Location = new System.Drawing.Point(209, 26);
             this.chbRock.Name = "chbRock";
             this.chbRock.Size = new System.Drawing.Size(52, 17);
@@ -285,6 +298,7 @@
             // chbPop
             // 
             this.chbPop.AutoSize = true;
+            this.chbPop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbPop.Location = new System.Drawing.Point(124, 28);
             this.chbPop.Name = "chbPop";
             this.chbPop.Size = new System.Drawing.Size(45, 17);
@@ -307,6 +321,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Location = new System.Drawing.Point(93, 175);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -317,6 +332,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Location = new System.Drawing.Point(216, 175);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -327,13 +343,14 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(339, 174);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 21;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmPersonas
@@ -361,6 +378,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de personas";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPersonas_FormClosing);
             this.Load += new System.EventHandler(this.frmPersonas_Load);
             this.gpSexo.ResumeLayout(false);
             this.gpSexo.PerformLayout();
@@ -382,9 +400,9 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.RadioButton rdMasculino;
-        private System.Windows.Forms.RadioButton rdFemenino;
-        private System.Windows.Forms.RadioButton rdOtro;
+        private System.Windows.Forms.RadioButton rdbMasculino;
+        private System.Windows.Forms.RadioButton rdbFemenino;
+        private System.Windows.Forms.RadioButton rdbOtro;
         private System.Windows.Forms.GroupBox gpSexo;
         private System.Windows.Forms.ComboBox cboColor;
         private System.Windows.Forms.CheckBox chbElectronica;

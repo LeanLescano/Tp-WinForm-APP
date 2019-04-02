@@ -13,7 +13,6 @@ namespace TP_WinForm_App
 {
     public partial class frmPersonas : Form
     {
-
         private List<Persona> listadoPersonas = new List<Persona>();
         private BindingList<Persona> listaBindeable;
 
@@ -59,10 +58,9 @@ namespace TP_WinForm_App
         {
             if (faltanDatos())
             {
-                MessageBox.Show("Faltan cargar datos", "¡Atención!");
+                MessageBox.Show("Faltan cargar datos", "Atención");
                 return;
             }
-            string fechnac = dtpFechaNacimiento.Text;
             //Busca cuál es el radioButton seleccionado y lo asigna a la variable.
             string sexoSelected = "";
             foreach (RadioButton Rboton in gpSexo.Controls)
@@ -76,7 +74,7 @@ namespace TP_WinForm_App
             string[] listadoEstilos = new string[8];
             string estilosMusicales = estilosToString(listadoEstilos);
             //Asigna los datos cargados mediante un constructor y lo agrega a la lista.
-            Persona nueva = new Persona(txtNombre.Text.Trim(), txtApellido.Text.Trim(), fechnac, sexoSelected, estilosMusicales, listadoEstilos, cboColor.Text);
+            Persona nueva = new Persona(txtNombre.Text.Trim(), txtApellido.Text.Trim(), dtpFechaNacimiento.Text, sexoSelected, estilosMusicales, listadoEstilos, cboColor.Text);
             if (btnAceptar.Text == "Agregar")
             {
                 listadoPersonas.Add(nueva);
@@ -107,14 +105,34 @@ namespace TP_WinForm_App
 
         private void dgvPersonas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvPersonas.CurrentRow.DataBoundItem == null) return;
+            if (e.RowIndex == -1 || dgvPersonas.CurrentRow.DataBoundItem == null) return;
+            if (datosCargados())
+            {
+                if(MessageBox.Show("Hay datos cargados en el formulario, \ndesea modificar la celda seleccionada?","Atención", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+            }
             restablecerControles();
-            btnEliminar.Visible = true;
+            btnEliminar.Enabled = true;
             btnAceptar.Text = "Modificar";
             Object filaSelected;
             filaSelected = dgvPersonas.CurrentRow.DataBoundItem;
             Persona personaSelected = (Persona)filaSelected;
             cargarDatosForm(personaSelected);
+        }
+
+        private bool datosCargados()
+        {
+            bool Dato = false;
+            if (txtNombre.Text != "" || txtApellido.Text != "" || cboColor.Text != "") Dato = true;
+            foreach (RadioButton Rboton in gpSexo.Controls)
+            {
+                if (Rboton.Checked) Dato = true;
+            }
+            foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
+            {
+                if (Cbox.Checked) Dato = true;
+            }
+            return Dato;
         }
 
         private void cargarDatosForm(Persona p)
@@ -141,21 +159,25 @@ namespace TP_WinForm_App
                         Cbox.Checked = true;
                     }
                 }
-
             }
         }
 
         private bool faltanDatos()
         {
-            if (txtApellido.Text.Trim() == "" || txtNombre.Text.Trim() == "") return true;
-            bool Vacio = true;
+            if (txtApellido.Text.Trim() == "" || txtNombre.Text.Trim() == "" || cboColor.SelectedIndex < 0) return true;
+            bool VacioS = true , VacioE = true;
             foreach (RadioButton Rboton in gpSexo.Controls)
             {
-                if (Rboton.Checked == true) Vacio = false;
+                if (Rboton.Checked) VacioS = false;
             }
-            if (Vacio) return true;
-
-            return false;
+            foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
+            {
+                if (Cbox.Checked) VacioE = false;
+            }
+            if (!VacioS && !VacioE)
+                return false;
+            else
+                return true;
         }
 
         private string estilosToString(string[] listadoE)
@@ -191,12 +213,11 @@ namespace TP_WinForm_App
         private void restablecerControles()
         {
             btnAceptar.Text = "Agregar";
-            btnEliminar.Visible = false;
+            btnEliminar.Enabled = false;
             foreach (RadioButton rb in gpSexo.Controls)
             {
                 rb.Checked = false;
             }
-
             foreach (CheckBox cb in gpbEstilosMusicales.Controls)
             {
                 cb.Checked = false;
@@ -218,6 +239,14 @@ namespace TP_WinForm_App
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && !(char.IsWhiteSpace(e.KeyChar)))
                 e.Handled = true;
+        }
+
+        private void frmPersonas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("¿Desea salir del formulario?", "Atención", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
