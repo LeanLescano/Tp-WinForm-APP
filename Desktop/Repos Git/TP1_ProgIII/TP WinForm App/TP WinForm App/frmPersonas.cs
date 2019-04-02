@@ -50,7 +50,11 @@ namespace TP_WinForm_App
             {
                 edad--;
             }
-            if (edad <= 0) return;
+            if (edad <= 0)
+            {
+                lblEdad.Text = "Edad: ";
+                return;
+            }
             lblEdad.Text = "Edad: " + edad.ToString();   
         }
 

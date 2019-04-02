@@ -373,6 +373,7 @@
             this.Controls.Add(this.lblFechaNacimiento);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
