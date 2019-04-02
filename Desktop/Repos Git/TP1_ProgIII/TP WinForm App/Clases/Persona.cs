@@ -13,18 +13,16 @@ namespace Clases
         public string fechaNacimiento { get; set; }
         public string Sexo { get; set; }
         public string estilosMusicales { get; set; }
-        public string[] estilosList { get; set; }
         public string colorFavorito { get; set; }
         
         public Persona() { }
 
-        public Persona(string nom, string ape, string fechNac, string sexo, string estilos, string[] lista, string color)
+        public Persona(string nom, string ape, string fechNac, string sexo, string estilos, string color)
         {
             Nombre = nom;
             Apellido = ape;
             fechaNacimiento = fechNac;
             Sexo = sexo;
-            estilosList = lista;
             estilosMusicales = estilos;
             colorFavorito = color;
         }

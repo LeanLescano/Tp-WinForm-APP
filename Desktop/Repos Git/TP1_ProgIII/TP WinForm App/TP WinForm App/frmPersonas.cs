@@ -75,10 +75,9 @@ namespace TP_WinForm_App
                 }
             }
             //Guarda los estilos musicales en un array de strings y en forma de texto para mostrar en la grilla.
-            string[] listadoEstilos = new string[8];
-            string estilosMusicales = estilosToString(listadoEstilos);
+            string estilosMusicales = estilosToString();
             //Asigna los datos cargados mediante un constructor y lo agrega a la lista.
-            Persona nueva = new Persona(txtNombre.Text.Trim(), txtApellido.Text.Trim(), dtpFechaNacimiento.Text, sexoSelected, estilosMusicales, listadoEstilos, cboColor.Text);
+            Persona nueva = new Persona(txtNombre.Text.Trim(), txtApellido.Text.Trim(), dtpFechaNacimiento.Text, sexoSelected, estilosMusicales, cboColor.Text);
             if (btnAceptar.Text == "Agregar")
             {
                 listadoPersonas.Add(nueva);
@@ -86,8 +85,7 @@ namespace TP_WinForm_App
             else
             {
                 if (dgvPersonas.CurrentRow == null) return;
-                int index = dgvPersonas.CurrentRow.Index;
-                listadoPersonas[index] = nueva;
+                listadoPersonas[dgvPersonas.CurrentRow.Index] = nueva;
             }
 
             refrescarGrilla();
@@ -110,34 +108,27 @@ namespace TP_WinForm_App
         private void dgvPersonas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1 || dgvPersonas.CurrentRow.DataBoundItem == null) return;
-            if (datosCargados())
-            {
-                if(MessageBox.Show("Hay datos cargados en el formulario, \ndesea modificar la celda seleccionada?","Atención", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return;
-            }
             restablecerControles();
             btnEliminar.Enabled = true;
             btnAceptar.Text = "Modificar";
-            Object filaSelected;
-            filaSelected = dgvPersonas.CurrentRow.DataBoundItem;
-            Persona personaSelected = (Persona)filaSelected;
+            Persona personaSelected = (Persona)dgvPersonas.CurrentRow.DataBoundItem;
             cargarDatosForm(personaSelected);
         }
 
-        private bool datosCargados()
-        {
-            bool Dato = false;
-            if (txtNombre.Text != "" || txtApellido.Text != "" || cboColor.Text != "") Dato = true;
-            foreach (RadioButton Rboton in gpSexo.Controls)
-            {
-                if (Rboton.Checked) Dato = true;
-            }
-            foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
-            {
-                if (Cbox.Checked) Dato = true;
-            }
-            return Dato;
-        }
+        //private bool datosCargados()
+        //{
+        //    bool Dato = false;
+        //    if (txtNombre.Text != "" || txtApellido.Text != "" || cboColor.Text != "") Dato = true;
+        //    foreach (RadioButton Rboton in gpSexo.Controls)
+        //    {
+        //        if (Rboton.Checked) Dato = true;
+        //    }
+        //    foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
+        //    {
+        //        if (Cbox.Checked) Dato = true;
+        //    }
+        //    return Dato;
+        //}
 
         private void cargarDatosForm(Persona p)
         {
@@ -155,13 +146,9 @@ namespace TP_WinForm_App
 
             foreach (CheckBox Cbox in gpbEstilosMusicales.Controls)
             {
-                Cbox.Checked = false;
-                foreach (string estilo in p.estilosList)
+                if(p.estilosMusicales.Contains(Cbox.Text))
                 {
-                    if (Cbox.Text == estilo)
-                    {
-                        Cbox.Checked = true;
-                    }
+                    Cbox.Checked = true;
                 }
             }
         }
@@ -184,7 +171,7 @@ namespace TP_WinForm_App
                 return true;
         }
 
-        private string estilosToString(string[] listadoE)
+        private string estilosToString()
         {
             string estilosM = "";
             int vuelta = 0, indice = 0;
@@ -192,7 +179,6 @@ namespace TP_WinForm_App
             {
                 if (Cbox.Checked)
                 {
-                    listadoE[indice] = Cbox.Text;
                     estilosM += Cbox.Text;
                     if (vuelta == 8)
                     {
